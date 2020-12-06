@@ -23,7 +23,7 @@ const GiftSection = () => {
     <>
       <GiftContainer id="home">
         <GiftBg>
-          <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
+          <VideoBg autoPlay loop muted src={Video} type="video/mp4" playsInline/>
         </GiftBg>
         <GiftContent>
           <GiftHeading>Online Gift Shopping Made More Fun</GiftHeading>
