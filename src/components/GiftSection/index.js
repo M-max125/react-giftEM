@@ -22,8 +22,10 @@ const GiftSection = () => {
   return (
     <>
       <GiftContainer id="home">
-        <GiftBg>
-          <VideoBg autoPlay loop muted src={Video} type="video/mp4" playsInline/>
+        <GiftBg dangerouslySetInnerHTML={{__html:
+            <VideoBg autoPlay loop muted playsInline src={Video} type="video/mp4" />,
+        }}>
+          
         </GiftBg>
         <GiftContent>
           <GiftHeading>Online Gift Shopping Made More Fun</GiftHeading>
