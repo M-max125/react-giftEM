@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect,useRef } from "react";
 import {
   GiftContainer,
   GiftBg,
@@ -19,16 +19,29 @@ const GiftSection = () => {
   const onHover = () => {
     setHover(!setHover);
   };
+  const videoEl = useRef(null);
+
+  const attemptPlay = () => {
+    videoEl &&
+      videoEl.current &&
+      videoEl.current.play().catch(error => {
+        console.error("Error attempting to play, error");
+      });
+  }
+  useEffect(() => {
+    attemptPlay();
+    
+  }, []);
   return (
     <>
       <GiftContainer id="home">
         <GiftBg>
           <VideoBg
-            autoPlay
-            loop
-            isMuted={true}
             playsInline
+            loop
+            muted
             src={Video}
+            ref={videoEl}
             type="video/mp4" />
         </GiftBg>
         <GiftContent>
