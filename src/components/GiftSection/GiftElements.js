@@ -39,7 +39,9 @@ export const GiftBg = styled.div`
   overflow: hidden;
 `;
 
-export const VideoBg = styled.video`
+export const VideoBg = styled.video.attrs(({ isMuted }) => ({
+  muted: isMuted
+}))`
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
