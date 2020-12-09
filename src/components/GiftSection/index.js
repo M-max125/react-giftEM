@@ -19,6 +19,8 @@ const GiftSection = () => {
   const onHover = () => {
     setHover(!setHover);
   };
+
+  
   const videoEl = useRef(null);
 
   const attemptPlay = () => {
@@ -32,6 +34,8 @@ const GiftSection = () => {
     attemptPlay();
     
   }, []);
+
+  
   return (
     <>
       <GiftContainer id="home">
